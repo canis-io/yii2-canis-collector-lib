@@ -1,0 +1,17 @@
+{
+	"name": "canis/yii2-canis-collector-lib",
+	"description": "Collector libraries used in Canis Yii2 based products",
+	"keywords": ["yii", "libraries"],
+	"homepage": "http://canis.io",
+	"type": "yii2-extension",
+	"license": "BSD-3-Clause",
+	"require": {
+		"canis/yii2-canis-lib": "1.*"
+	},
+	"autoload": {
+        "psr-4": { "canis\\collector\\": "lib" }
+	},
+    "extra": {
+        "bootstrap": "canis\\collector\\Bootstrap"
+    }
+}
