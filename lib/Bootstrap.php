@@ -1,5 +1,6 @@
 <?php
 namespace canis\collector;
+use yii\base\BootstrapInterface;
 
 /**
  * Bootstrap extension
