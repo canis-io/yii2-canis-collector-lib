@@ -23,6 +23,9 @@ trait CollectorTrait
     public function init()
     {
         parent::init();
+        if ($this->requireDatabase() && isset(Yii::$app->databaseAvailable) && Yii::$app->databaseAvailable === false) {
+          return;
+        }
         $this->registerMultiple($this->baseOwner, $this->initialItems);
         Yii::$app->collectors->on(Component::EVENT_AFTER_LOAD, [$this, 'beforeRequest']);
     }
@@ -201,5 +204,10 @@ trait CollectorTrait
         }
 
         return min($results);
+    }
+
+    protected function requireDatabase()
+    {
+        return true;
     }
 }
